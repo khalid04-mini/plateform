@@ -1,22 +1,33 @@
+@package com.inprogress.inprogress.entities;
+
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+@Table(name = "compte");
 public class Compte {
-    private String prenom;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY);
+    private int id;
+
+    @Column(name="nom");
     private String Nom;
+    @Column(name="role");
     private String role;
+    @Column(name="email")
     private String email;
+    @Column(name="password")
     private String password;
 
     public Compte() {
     }
 
-    public String getPrenom() {
-        return this.prenom;
-    }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
 
-    public String getNom() {
+    public String getNom(){
         return this.Nom;
     }
 

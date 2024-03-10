@@ -1,12 +1,30 @@
+@package com.inprogress.inprogress.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+@Table(name="formation")
+
+
 public class Formation{
 
 
-    private int idformation;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long idformation;
+    @Column(name="nomFormation");
     private String nomFormation;
+    @Column(name="DateDebutFormation");
     private Date DateDebutFormation; 
+    @Column(name="DateFinFormation");
     private Date DateFinFormation; 
-    private int idFormateur;
-    private int id_participant;
+    @Column(name="idFormateur");
+    private Formateur idFormateur;
+    @Column(name="id_facture");
+    private Facture id_facture;
 
     public Formation() {
     }
@@ -53,12 +71,12 @@ public class Formation{
         this.idFormateur = idFormateur;
     }
 
-    public int getId_participant() {
-        return this.id_participant;
+    public int getid_facturet() {
+        return this.id_facture;
     }
 
-    public void setId_participant(int id_participant) {
-        this.id_participant = id_participant;
+    public void setid_facture(int id_facture) {
+        this.id_facture = id_facture;
     }
 
 }

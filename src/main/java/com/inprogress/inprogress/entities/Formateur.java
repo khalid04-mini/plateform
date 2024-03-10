@@ -1,11 +1,27 @@
+@package com.inprogress.inprogress.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import lombok.Data;
+
+//To use the @Data annotation you should add the Lombok dependency.
+@Data
+@Entity
+@Table(name="formateur")
+
+
 public class Formateur {
-
-    
-
     // attribut
-    private int id_Formateur ;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id_Formateur ;
+    @Column(name="nom_Formateur");
     private String nom_Formateur ;
+    @Column(name="email_Formateur");
     private String email_Formateur ;
+    @Column(name="password_Formateur");
     private String password_Formateur ;
     
     // consrtuctor
